@@ -11,7 +11,7 @@ import android.os.Bundle;
 
 
 public class DataActivity extends AppCompatActivity {
-    DataBaseHelper mDatabaseHelper;
+    DatabaseHelper mDatabaseHelper;
     private Button btnAdd, btnViewData;
     private EditText editText;
     @Override

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DataActivity"></activity>
+        <activity android:name=".EditDataActivity"></activity>
+        <activity android:name=".ListDataActivity" />
+        <activity android:name=".DataActivity" />
         <activity android:name=".RoomsActivity" />
         <activity android:name=".FloorActivity" />
         <activity android:name=".MainActivity">

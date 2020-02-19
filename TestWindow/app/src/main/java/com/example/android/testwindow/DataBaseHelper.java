@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+ class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "DatabaseHelper";
 
     private static final String TABLE_NAME = "people_table";
@@ -17,7 +17,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
-
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL2 +" TEXT)";
+        db.execSQL(createTable);
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP IF TABLE EXISTS " + TABLE_NAME);
